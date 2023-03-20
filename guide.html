@@ -1,0 +1,118 @@
+<!--These notes were written during my self taught progress through html-->
+<!--Author: Johnny Staley-->
+
+HTML
+I. Basics
+    A. HTML: HyperText Markup Language
+        a. Used as the basis for website layouts
+    B. Useful Tools
+        a. Live Server extension
+            i. Allows you to preview website changes without deploying to the internet
+    C. Structure 
+        a. Any <tag> followed with the text between </tag> is considered an entire element. This example would be a tag element
+        b. <!DOCTYPE html>
+            i. Begin html files with <!DOCTYPE html> to let browsers know the file is an html document
+        c. <html></html> These are html tags
+            i. These surround all of the code in the document to define the root
+        d. <head></head> These are the head tags
+            i. Represents information about a web page that the user may not see
+            ii. <title>Sample Title</title> These are title tags
+                1.Displays the title of the webpage in the browser tab
+        e. <body></body> These are body tags
+            i. The body is what is displayed to the user
+            ii. <h1></h1> These are header tags
+                1.header tags are defined by h and the corresponding number to indicate the header characteristics from the css file
+                2. Generally they get smaller from h1 to h6
+            iii. <p></p> These are paragraph tags
+                1. Used to display text in paragraph format
+                2. <p> tags will include a break between them if used in sequence
+            iv. <br></br> These are line break tags
+                1. Functions the same as pressing enter and skipping a line in word
+            v. <hr> This is a horizontal rule tag
+                1. Adds a horizontal line to the page that can be used to break up bodies of text
+            vi. <!-- --> This is the comment tag
+                1. Anything between the comment tag arrows will not affect the look or function of the webpage
+II. Hyperlinks
+    A. Hyperlinks can be applied to any piece of text, images, elements, and buttons
+    B.Creating a hyperlink
+        a. <a></a> These are a tags
+        b. To create a hyperlink, surround an element with a tags
+            i. Within the first a tag, define your link using <a href = “https://www.sample.com”>
+    C. Hyperlink Characteristics
+        a. By default, a hyperlink will open the page in the same tab. To open to a new tab, add a target attribute after the link and set it to _blank
+            i. Ex: <a href = “https://www.sample.com” target = _blank>
+            ii. To set the hyperlink to open to the same tab, change the target to _self
+        b. You can also add a title to the hyperlink which will display a small popup box prior to clicking on the link. 
+            i. Ex: <a href = “https://www.sample.com” title = “sample”>
+        c. You can also set hyperlinks equal to the titles of other html files in your document to navigate between them.
+            i. Ex: <a href = “sample.html”>
+        d. With the appropriate framework, you can also send emails with hyperlinks using the mailto hyperlink element
+            i.Ex: <a href = “mailto:sample123@gmail.com”>
+                    sample message
+			      </a>
+III. Images
+    A. Adding images
+        a. <img></img> These are image tags
+        b. Images have modifiable attributes that can be used to define their parameters
+            i. src is the source attribute
+                1. The source attribute can be used to define the source of an image from the document files
+                    a. Ex: <img src = “sample.png”>
+                2. If the image is being sourced from within a folder, you will need to reference that in the src attribute
+                    a. Ex: <img src = “images/sample.png”>
+            ii. height and width are other image attributes that can be adjusted via pixel size
+                1. The height and width scale proportionally with each other, but can also be adjusted individually to change the aspect ratio of the image
+                    a. Ex: <img src = “sample.png” height=“300” width=“100”>
+            iii. alt is an attribute that can be used to add a description of an image for accessibility
+                1. This is good for those who are visually impaired and may be using screen readers
+                    a. Ex: <img src = “sample.png” alt=“sample description”>
+            iv. title is an attribute that can be used to add a pop up box when hovering over the image
+                1. Ex: <img src = “sample.png” title=“sample title”>
+    B. Image Hyperlinks
+        a. Images can be turned into hyperlinks using the same methods defined in the hyperlinks guide.
+            i. Ex:  <a href=“https://www.sample.com”>
+                        <img src = “sample.png”>
+                    </a>
+IV. Audio
+    A. Adding audio
+        a. <audio> this is an audio tag
+        b. Audio elements receive sources through the same source attribute as images, however they also require a boolean attribute known as controls to set the src to true
+            i. Ex: <audio controls src = “sample.mp3”>
+        c. autoplay is another boolean attribute which will autoplay the sound file upon the page loading
+            i. Ex: <audio controls autoplay src = “sample.mp3”>
+        d. muted is yet another boolean attribute which will mute the sound file upon the page loading
+            i. Ex: <audio controls autoplay muted src = “sample.mp3”>
+        e. loop is another boolean attribute which will loop the sound file continuously
+            i. Ex: <audio controls autoplay loop src = “sample.mp3”>
+    B. Backup audio
+        a. You can include backup audio files in the case that a web browser does not support the given format. To do this, you should create multiple nested source elements within the audio element. (This requires an audio closing tag)
+            i. Ex:  <audio controls autoplay loop>
+                        <source src = “sample.mp3”>
+                        <source src = “sample.wav”>
+                        This browser does not support HTML5 audio
+			       </audio>
+            ii. In the event that none of the audio files are compatible with the browser, the message above will display in their place.
+V. Video
+    A. Adding video
+        a. <video> This is a video tag
+        b. Video elements work similarly to audio and image elements with controls functioning as the boolean attribute to play the video file
+            i. Ex: <video controls src = “sample.mp4”>
+        c. All attributes that apply to images and audio apply to videos as well including width and height and muted
+            i. Ex: <video controls muted src = “sample.mp4” width=”500”>
+        d. The autoplay attribute does not require controls to play a video file
+            i. Ex: <video autoplay src = “sample.mp4”>
+    B. Backup video
+        a. You can include backup video files in the case that a web browser does not support the given format. To do this, you should create multiple nested source elements within the video element. (This requires a video closing tag)
+            i. Ex:  <video controls autoplay loop>
+                        <source src = “sample.mp4”>
+                        <source src = “sample.WebM”>
+                        This browser does not support HTML5 video
+			       </video>
+VI. Text Formatting
+
+
+Tips
+    A. General
+        a. index .html will be returned as home page if no home page is specified in the server config
+    B. Shortcuts
+        a. Typing “Lorem” and the pressing tab will auto generate sample text to fill a space
+        b. In VS code, you can generate the necessary body of an html document by typing an exclamation point ! and then pressing tab
